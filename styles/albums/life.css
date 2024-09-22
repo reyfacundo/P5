@@ -57,10 +57,14 @@ header,
 nav {
     width: 100%;
     height: fit-content;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    margin-bottom: 40px;
 }
 
 nav ul {
-    background: rgb(255, 255, 255);
+    background: #f5f5f5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,7 +133,7 @@ a {
 }
 
 main {
-    background-color: white;
+    background-color: #f5f5f5;
     height: 100%;
     width: 60%;
     overflow: auto;
@@ -218,7 +222,7 @@ main {
     text-align: center;
     /* text-transform: uppercase; */
     background-color: #c42828ad;
-    color: white
+    color: #f5f5f5;
 }
 
 .albums .albums-container .album-cover:hover {
@@ -260,32 +264,101 @@ main {
     /* border: 5px solid black; */
     flex-direction: column;
     width: 100%;
+    overflow: scroll;
 }
 
 .album-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     flex-direction: column;
+    gap: 20px;
 }
 
-.album-content{
+/* .album-content{
+    border: 2px solid blue;
+} */
+h1{
+    margin-bottom: 20px;
+    font-family: "Abril Fatface", serif;
+    letter-spacing: 2px;
+    color: #000000;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.album-container p{
     width: 60%;
-    /* border: 2px solid; */
-    /* background-color: rgba(255, 255, 255, 0.137);
-    backdrop-filter: blur(16px) saturate(130%);
-    border: 1px solid rgba(255, 255, 255, 0.164); */
-    backdrop-filter: blur(16px) saturate(180%);
+    /* backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.301);
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
-}
-h1{
-    color: white;
-}
-.album-content p{
     padding: 30px;
-    /* color: white; */
+    font-size: 1.1rem; */
+    background-color: #f5f5f5e3;
+    padding: 30px;
     font-size: 1.1rem;
+    border-radius: 12px;
 }
+.songs{
+    width: 60%;
+
+}
+.songs li{
+    display: flex;
+    border-radius: 4px;
+    height: 70px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #f5f5f5d0;
+}
+.songs li:hover{
+    transition: transform 0.3s;
+    transform: scale(1.02);
+}
+.first-half{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: fit-content;
+}
+.songs li span img{
+    width: 40px;
+    border-radius: 4px;
+}
+.second-half{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+.second-half span:nth-child(2){
+    /* background-color: blue; */
+    /* position: absolute; */
+    right: 20px;
+
+}
+/* .songs li span:nth-child(2){
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+} */
+
+/* .songs li:nth-child(1) div:nth-child(2){
+    background-color: rgb(109, 109, 109);
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+} */
+/* .line-container{
+    width: 70%;
+    height: 5px;
+}
+.line-container div:nth-child(1){
+    border-radius: 10px;
+    height: 100%;
+    width: 70px;
+    background-color: rgb(202, 15, 15);
+} */
