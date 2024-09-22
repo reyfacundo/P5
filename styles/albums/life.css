@@ -8,7 +8,9 @@
     margin: 0;
     padding: 0;
 }
-
+a{
+    color: inherit;
+}
 li {
     list-style: none;
 }
@@ -60,7 +62,7 @@ nav {
     position: sticky;
     z-index: 1000;
     top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 nav ul {
@@ -73,7 +75,6 @@ nav ul {
 }
 
 nav ul span {
-    /* border: 2px solid; */
     gap: 40px;
     width: 100%;
     display: flex;
@@ -86,7 +87,6 @@ nav ul span {
     font-size: 1.2rem;
     height: 100%;
     color: rgb(0, 0, 0);
-    /* border: 2px solid red; */
 }
 
 .nav-item:hover {
@@ -103,12 +103,6 @@ a {
 }
 
 .login-info {
-    /* position: absolute;
-    right: 3%;
-    color: rgb(0, 0, 0);
-    align-items: center;
-    justify-content: center;
-    text-align: center; */
     gap: 35px;
     display: flex;
 }
@@ -121,6 +115,7 @@ a {
 }
 
 .bg {
+    filter: blur(2px);
     background-image: url(/assets/25-cover.jpg);
     position: absolute;
     z-index: -1;
@@ -129,7 +124,6 @@ a {
     height: 100%;
     object-fit: cover;
     background-size:cover;
-    /* filter: blur(3px);  */
 }
 
 main {
@@ -137,17 +131,14 @@ main {
     height: 100%;
     width: 60%;
     overflow: auto;
-    /* border: 2px solid; */
 }
 
 .container {
-    /* border: 2px solid; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 25px;
-    /* margin: 12% 5%; */
 }
 
 .bio-container {
@@ -168,9 +159,6 @@ main {
 
 .logo {
     width: 13rem;
-    /* position: absolute;
-    left:30px;
-    top: 30px; */
 }
 
 .albums {
@@ -212,15 +200,14 @@ main {
     display: flex;
     transition: transform 0.3s ease;
     position: relative;
-    /* border: 2px solid black; */
 }
 
-.albums .albums-container .album-cover h3 {
+.albums .albums-container .album-cover h2 {
+    font-size: 1.1rem;
     position: absolute;
     width: 100%;
     bottom: 30px;
     text-align: center;
-    /* text-transform: uppercase; */
     background-color: #c42828ad;
     color: #f5f5f5;
 }
@@ -255,16 +242,12 @@ main {
     scrollbar-color: #b93434 #f1f1f1; /* Handle color Track color */
 }
 
-/* nav{
-    border: 10px solid;
-} */
 
 .right-container{
     display: flex;
-    /* border: 5px solid black; */
     flex-direction: column;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .album-container{
@@ -274,10 +257,6 @@ main {
     flex-direction: column;
     gap: 20px;
 }
-
-/* .album-content{
-    border: 2px solid blue;
-} */
 h1{
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
@@ -288,12 +267,6 @@ h1{
 }
 .album-container p{
     width: 60%;
-    /* backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.301);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
-    padding: 30px;
-    font-size: 1.1rem; */
     background-color: #f5f5f5e3;
     padding: 30px;
     font-size: 1.1rem;
@@ -301,6 +274,7 @@ h1{
 }
 .songs{
     width: 60%;
+    margin-bottom: 20px;
 
 }
 .songs li{
@@ -334,31 +308,46 @@ h1{
     position: relative;
 }
 .second-half span:nth-child(2){
-    /* background-color: blue; */
-    /* position: absolute; */
     right: 20px;
-
 }
-/* .songs li span:nth-child(2){
+.songs li .second-half img{
+    cursor: pointer;
+}
+.songs li .second-half img:hover{
+    filter: contrast(120%) brightness(110%);
+}
+.songs .add-song{
+    background-color:#b93434d3;
+    color: white;
+    font-size: 3rem;
     display: flex;
-    flex: 1;
-    justify-content: space-around;
-} */
-
-/* .songs li:nth-child(1) div:nth-child(2){
-    background-color: rgb(109, 109, 109);
-    border-radius: 10px;
-    display: inline-block;
-    text-align: center;
-    margin: auto;
-} */
-/* .line-container{
-    width: 70%;
-    height: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.line-container div:nth-child(1){
-    border-radius: 10px;
-    height: 100%;
-    width: 70px;
-    background-color: rgb(202, 15, 15);
-} */
+.songs .add-song:hover, .second-half span:nth-child(1):hover{
+    filter: contrast(120%) brightness(110%);
+}
+
+.first-half span:nth-child(1){
+    font-weight: 500;
+}
+.first-half h3{
+    font-size: 1rem;
+    font-weight: 600
+
+}
+.second-half span:nth-child(2){
+    font-weight: 600;
+}
+.second-half span:nth-child(1){
+    font-weight: 600;
+    color:#b93434;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-left: 13px solid #646464;
+	border-bottom: 7px solid transparent;
+}
