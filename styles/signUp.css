@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* *{
+    color: white;
+} */
+
+.logo {
+    width: 8rem;
+    position: absolute;
+    right:30px;
+    top: 30px;
+}
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(px);
+    z-index: -1;
+    object-fit: cover;
+}
+
+.signUp {
+    background-color: #ffffff;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUp form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    transition: 0.7s;
+
+}
+
+.form-group input {
+    border-radius: 3px;
+    border: 1.9px solid;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: 0.1s;
+}
+
+.form-group input:focus {
+    outline: 1.5px solid #fc6f6f;
+    color: white;
+    background-color: #cf3937;
+    border: none;
+}
+
+.form-group:nth-child(4) {
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 30px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+input[type=button] {
+    background-color: #096e7a;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+input[type=button]:hover{
+    background-color: #085b64;
+    outline: none;
+}
+input[type=button]:focus{
+    background-color: #085b64;
+    outline: none;
+}
+input[type=button]:active{
+    transform: scale(1.01);
+}
+.redir {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.redir a {
+    color: rgb(233, 53, 53);
+    text-decoration: none;
+}
+.redir a:hover{
+    text-decoration:underline;
+}

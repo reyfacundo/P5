@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: rebeccapurple;
+    height: 100vh;
+    display: flex;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+.pfp {
+    height: 70px;
+}
+
+header,
+nav {
+    width: 100%;
+    height: fit-content;
+}
+
+nav ul {
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 1px solid rgba(15, 15, 15, 0.911);
+    padding:13px 20px 13px 20px;
+}
+
+nav ul span {
+    /* border: 2px solid; */
+    gap: 40px;
+    width: 100%;
+    display: flex;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    gap: 10px;
+    display: flex;
+    font-size: 1.2rem;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    /* border: 2px solid red; */
+}
+
+.nav-item:hover {
+    text-decoration: line-through 2px;
+}
+
+.nav-item img {
+    color: black;
+    height: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login-info {
+    /* position: absolute;
+    right: 3%;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
+    text-align: center; */
+    gap: 35px;
+    display: flex;
+}
+
+.login-info div:nth-child(1) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+}
+
+.bg {
+    background-image: url(/assets/25-cover.jpg);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size:cover;
+    /* filter: blur(3px);  */
+}
+
+main {
+    background-color: white;
+    height: 100%;
+    width: 60%;
+    overflow: auto;
+    /* border: 2px solid; */
+}
+
+.container {
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    /* margin: 12% 5%; */
+}
+
+.bio-container {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.bio-container p {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.hero {
+    display: flex;
+    height: 100%;
+}
+
+.logo {
+    width: 13rem;
+    /* position: absolute;
+    left:30px;
+    top: 30px; */
+}
+
+.albums {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.albums .albums-container img {
+    height: 350px;
+    border-radius: 6px;
+}
+
+.albums .albums-container {
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-orientation: upright;
+}
+
+.albums .albums-container img {
+    height: 350px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.albums .albums-container {
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-orientation: upright;
+}
+
+.albums .albums-container .album-cover {
+    display: flex;
+    transition: transform 0.3s ease;
+    position: relative;
+    /* border: 2px solid black; */
+}
+
+.albums .albums-container .album-cover h3 {
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    background-color: #c42828ad;
+    color: white
+}
+
+.albums .albums-container .album-cover:hover {
+    border-radius: 6px;
+    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.226);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* WebKit Scrollbars (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* width */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b93434; /* Handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #942121; /* Handle on hover */
+}
+
+/* Firefox Scrollbars */
+* {
+    scrollbar-width: thin; /* auto, thin, none */
+    scrollbar-color: #b93434 #f1f1f1; /* Handle color Track color */
+}
+
+/* nav{
+    border: 10px solid;
+} */
+
+.right-container{
+    display: flex;
+    /* border: 5px solid black; */
+    flex-direction: column;
+    width: 100%;
+}
+
+.album-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.album-content{
+    width: 60%;
+    /* border: 2px solid; */
+    /* background-color: rgba(255, 255, 255, 0.137);
+    backdrop-filter: blur(16px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.164); */
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+h1{
+    color: white;
+}
+.album-content p{
+    padding: 30px;
+    /* color: white; */
+    font-size: 1.1rem;
+}
