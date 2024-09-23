@@ -8,7 +8,9 @@
     margin: 0;
     padding: 0;
 }
-
+a{
+    color: inherit;
+}
 li {
     list-style: none;
 }
@@ -19,6 +21,7 @@ body {
     -webkit-font-smoothing: antialiased;
     background-color: rebeccapurple;
     height: 100vh;
+    display: flex;
 }
 
 img,
@@ -54,22 +57,24 @@ h6 {
 
 header,
 nav {
-    height: 100%;
     width: 100%;
+    height: fit-content;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    margin-bottom: 20px;
 }
 
 nav ul {
-    background: rgb(255, 255, 255);
+    background: #f5f5f5;
     display: flex;
-    height: 10%;
     justify-content: space-between;
     align-items: center;
     border-left: 1px solid rgba(15, 15, 15, 0.911);
-    padding: 0 20px 0 20px;
+    padding:13px 20px 13px 20px;
 }
 
 nav ul span {
-    /* border: 2px solid; */
     gap: 40px;
     width: 100%;
     display: flex;
@@ -82,7 +87,6 @@ nav ul span {
     font-size: 1.2rem;
     height: 100%;
     color: rgb(0, 0, 0);
-    /* border: 2px solid red; */
 }
 
 .nav-item:hover {
@@ -99,12 +103,6 @@ a {
 }
 
 .login-info {
-    /* position: absolute;
-    right: 3%;
-    color: rgb(0, 0, 0);
-    align-items: center;
-    justify-content: center;
-    text-align: center; */
     gap: 35px;
     display: flex;
 }
@@ -116,54 +114,46 @@ a {
     gap: 20px;
 }
 
-.bg video {
+.bg{
     position: absolute;
     z-index: -1;
     top: 0;
+    width: 100%;
+    height: 100%;
+}
+.bg video {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 main {
-    background-color: white;
+    background-color: #f5f5f5;
     height: 100%;
     width: 60%;
     overflow: auto;
-    /* border: 2px solid; */
 }
 
 .container {
-    /* border: 2px solid; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 25px;
-    /* margin: 12% 5%; */
 }
 
 .bio-container {
     font-size: 1.2rem;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .bio-container p {
     margin: 0 auto;
     width: 90%;
 }
-
-.hero {
-    display: flex;
-    height: 100%;
-}
-
 .logo {
     width: 13rem;
-    /* position: absolute;
-    left:30px;
-    top: 30px; */
 }
 
 .albums {
@@ -174,9 +164,15 @@ main {
     justify-content: center;
 }
 
+.albums .albums-container {
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-orientation: upright;
+}
 
 .albums .albums-container img {
-    height: 350px;
     border-radius: 6px;
     object-fit: cover;
 }
@@ -190,26 +186,26 @@ main {
 }
 
 .albums .albums-container .album-cover {
+    width: 70%;
     display: flex;
-    transition: transform 0.3s ease;
     position: relative;
-    /* border: 2px solid black; */
 }
 
-.albums .albums-container .album-cover h3 {
+.albums .albums-container .album-cover h2 {
+    font-size: 1.1rem;
     position: absolute;
     width: 100%;
     bottom: 30px;
     text-align: center;
-    /* text-transform: uppercase; */
     background-color: #c42828ad;
-    color: white
+    color: #f5f5f5;
 }
 
 .albums .albums-container .album-cover:hover {
     border-radius: 6px;
-    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.226);
-    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.288);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -234,4 +230,251 @@ main {
 * {
     scrollbar-width: thin; /* auto, thin, none */
     scrollbar-color: #b93434 #f1f1f1; /* Handle color Track color */
+}
+
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+}
+
+.album-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Abril Fatface", serif;
+    letter-spacing: 2px;
+    color: #000000;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.album-container p{
+    width: 60%;
+    background-color: #f5f5f5e3;
+    padding: 30px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+}
+.songs{
+    width: 60%;
+    margin-bottom: 20px;
+}
+.songs li{
+    display: flex;
+    border-radius: 4px;
+    height: 70px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #f5f5f5d0;
+}
+.songs li:hover{
+    transition: transform 0.3s;
+    transform: scale(1.02);
+}
+.first-half{
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+
+.songs li span img{
+    width: 40px;
+    border-radius: 4px;
+}
+.second-half{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.songs li .second-half img{
+    cursor: pointer;
+}
+.songs li .second-half img:hover, .songs .add-song:hover{
+    filter: contrast(120%) brightness(110%);
+}
+.songs .add-song{
+    background-color:#b93434d3;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.first-half span:nth-child(1){
+    font-weight: 500;
+}
+.first-half h3{
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600
+
+}
+.second-half span:nth-child(2){
+    font-weight: 600;
+}
+.second-half span:nth-child(1){
+    font-weight: 600;
+    color:#b93434;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-left: 13px solid #646464;
+	border-bottom: 7px solid transparent;
+}
+.add-album h2{
+    color: white;
+    font-size: 4rem;
+
+}
+.add-album{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    border-radius: 7px;
+    background-color: rgba(167, 17, 17, 0.671);
+}
+.add-album:hover{
+    transition: transform 0.1s;
+    transform: scale(1.01);
+    filter:saturate(120%)
+}
+@media (max-width: 1350px) {
+    .albums .albums-container .album-cover {
+        width: 100%;
+    }
+    .songs{
+        width: 80%;
+    }
+    .album-container p{
+        width: 80%;
+    }
+    .second-half{
+        gap: 20px;
+    }
+}
+@media (max-width: 960px) {
+    .albums-logo{
+        width: 90%;
+    }
+    .songs{
+        width: 80%;
+    }
+    .album-container p{
+        width: 80%;
+    }
+    .second-half{
+        gap: 20px;
+    }
+    .second-half span:nth-child(2){
+        display: none;
+    }
+    .nav-item{
+        font-size: 1rem;
+    }
+    .right-container header nav ul span{
+        gap: 20px;
+    }
+    .right-container header nav ul span{
+        justify-content: center;
+        align-items: center;
+    }
+    .login-info{
+        gap: 10px;
+    }
+}
+@media (max-width: 800px) {
+    .logo{
+        margin-top: 40px;
+    }
+    .albums-logo{
+        width: 50%;
+        margin: 30px 0;
+    }
+    .albums .albums-container .album-cover {
+        width: 85%;
+    }
+    body{
+        /* display: block; */
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .bg{
+        z-index: 1; /* Behind other content */
+    }
+    .bg video{
+        height: 60%;
+    }
+    main{
+        margin-top: 420px;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .right-container{
+        height: auto;
+        overflow: hidden;
+    }
+    .container{
+        height: auto;
+    }
+    .songs li .first-half span, .songs li .first-half div{
+        display: none;
+    }.songs li .first-half h3{
+        font-size: 13px;
+    }
+    .songs li{
+        padding: 0;
+    }
+    .songs li span img{
+        height: 100%;
+        width: 20%;
+        border-radius: 4px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .second-half{
+        font-size: 13px;
+    }
+    .second-half span:nth-child(3){
+        height: 100%;
+        font-size: 90px;
+        display: flex;
+    }
+    .second-half span:nth-child(3) img{
+        width: 2rem;
+        height: 100%;
+        font-size: 90px;
+        margin-right: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item{
+        font-size: 0.8rem;
+    }
+    .login-info{
+        gap: 0;
+    }
 }

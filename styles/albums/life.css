@@ -117,13 +117,14 @@ a {
 .bg {
     filter: blur(2px);
     background-image: url(/assets/25-cover.jpg);
-    position: absolute;
-    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    position: absolute; 
     top: 0;
+    left: 0; 
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-size:cover;
+    height: 100%; 
+    z-index: -1; 
 }
 
 main {
@@ -143,20 +144,13 @@ main {
 
 .bio-container {
     font-size: 1.2rem;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 .bio-container p {
     margin: 0 auto;
     width: 90%;
 }
-
-.hero {
-    display: flex;
-    height: 100%;
-}
-
 .logo {
     width: 13rem;
 }
@@ -169,11 +163,6 @@ main {
     justify-content: center;
 }
 
-.albums .albums-container img {
-    height: 350px;
-    border-radius: 6px;
-}
-
 .albums .albums-container {
     justify-content: center;
     display: flex;
@@ -183,7 +172,6 @@ main {
 }
 
 .albums .albums-container img {
-    height: 350px;
     border-radius: 6px;
     object-fit: cover;
 }
@@ -197,8 +185,8 @@ main {
 }
 
 .albums .albums-container .album-cover {
+    width: 70%;
     display: flex;
-    transition: transform 0.3s ease;
     position: relative;
 }
 
@@ -214,8 +202,9 @@ main {
 
 .albums .albums-container .album-cover:hover {
     border-radius: 6px;
-    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.226);
-    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.288);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -258,6 +247,7 @@ main {
     gap: 20px;
 }
 h1{
+    text-align: center;
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
     letter-spacing: 2px;
@@ -275,7 +265,6 @@ h1{
 .songs{
     width: 60%;
     margin-bottom: 20px;
-
 }
 .songs li{
     display: flex;
@@ -292,10 +281,10 @@ h1{
 }
 .first-half{
     display: flex;
-    gap: 30px;
+    gap: 1vw;
     align-items: center;
-    width: fit-content;
 }
+
 .songs li span img{
     width: 40px;
     border-radius: 4px;
@@ -307,13 +296,11 @@ h1{
     gap: 40px;
     position: relative;
 }
-.second-half span:nth-child(2){
-    right: 20px;
-}
+
 .songs li .second-half img{
     cursor: pointer;
 }
-.songs li .second-half img:hover{
+.songs li .second-half img:hover, .songs .add-song:hover{
     filter: contrast(120%) brightness(110%);
 }
 .songs .add-song{
@@ -325,14 +312,16 @@ h1{
     align-items: center;
     cursor: pointer;
 }
-.songs .add-song:hover, .second-half span:nth-child(1):hover{
-    filter: contrast(120%) brightness(110%);
-}
 
 .first-half span:nth-child(1){
     font-weight: 500;
 }
 .first-half h3{
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
     font-size: 1rem;
     font-weight: 600
 
@@ -350,4 +339,144 @@ h1{
 	border-top: 7px solid transparent;
 	border-left: 13px solid #646464;
 	border-bottom: 7px solid transparent;
+}
+.add-album h2{
+    color: white;
+    font-size: 4rem;
+
+}
+.add-album{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    border-radius: 7px;
+    background-color: rgba(167, 17, 17, 0.671);
+}
+.add-album:hover{
+    transition: transform 0.1s;
+    transform: scale(1.01);
+    filter:saturate(120%)
+}
+@media (max-width: 1350px) {
+    .albums .albums-container .album-cover {
+        width: 100%;
+    }
+    .songs{
+        width: 80%;
+    }
+    .album-container p{
+        width: 80%;
+    }
+    .second-half{
+        gap: 20px;
+    }
+}
+@media (max-width: 960px) {
+    .albums-logo{
+        width: 90%;
+    }
+    .songs{
+        width: 80%;
+    }
+    .album-container p{
+        width: 80%;
+    }
+    .second-half{
+        gap: 20px;
+    }
+    .second-half span:nth-child(2){
+        display: none;
+    }
+    .nav-item{
+        font-size: 1rem;
+    }
+    .right-container header nav ul span{
+        gap: 20px;
+    }
+    .right-container header nav ul span{
+        justify-content: center;
+        align-items: center;
+    }
+    .login-info{
+        gap: 10px;
+    }
+}
+@media (max-width: 800px) {
+    .logo{
+        margin-top: 40px;
+    }
+    .albums-logo{
+        width: 50%;
+        margin: 30px 0;
+    }
+    .albums .albums-container .album-cover {
+        width: 85%;
+    }
+    body{
+        /* display: block; */
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .bg{
+        background-size: cover; /* This ensures the image covers the entire container */
+        background-position: center; /* Centers the image */
+        position: absolute; /* Position it absolutely if it's a background */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Full width */
+        min-height: 1400px;
+        z-index: -1; /* Behind other content */
+    }
+    main{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .right-container{
+        height: auto;
+        overflow: hidden;
+    }
+    .container{
+        height: auto;
+    }
+    .songs li .first-half span, .songs li .first-half div{
+        display: none;
+    }.songs li .first-half h3{
+        font-size: 13px;
+    }
+    .songs li{
+        padding: 0;
+    }
+    .songs li span img{
+        height: 100%;
+        width: 20%;
+        border-radius: 4px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .second-half{
+        font-size: 13px;
+    }
+    .second-half span:nth-child(3){
+        height: 100%;
+        font-size: 90px;
+        display: flex;
+    }
+    .second-half span:nth-child(3) img{
+        width: 2rem;
+        height: 100%;
+        font-size: 90px;
+        margin-right: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item{
+        font-size: 0.8rem;
+    }
+    .login-info{
+        gap: 0;
+    }
 }
