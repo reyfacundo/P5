@@ -251,8 +251,8 @@ h1{
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
     letter-spacing: 2px;
-    color: #000000;
-    font-size: 2.5rem;
+    color: whitesmoke;
+    font-size: 2.5rem !important;
     text-transform: uppercase;
 }
 .album-container p{
