@@ -128,3 +128,30 @@ input[type=button]:active{
 .redir a:hover{
     text-decoration:underline;
 }
+
+
+@media (max-width: 960px) {
+    body{
+        display:flex ;
+        flex-direction: column;
+    }
+    .bg{
+        position: static;
+        height: 80%;
+    }
+    .login{
+        width: 100%;
+    }
+}
+@media (max-width: 350px) {
+    .logo{
+        width: 5.5rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    .form-group{
+        width: 70%;
+    }
+
+}

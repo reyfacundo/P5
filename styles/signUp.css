@@ -153,3 +153,43 @@ input[type=button]:active{
 .redir a:hover{
     text-decoration:underline;
 }
+
+@media (max-width: 960px) {
+    body{
+        display:flex ;
+        flex-direction: column-reverse;
+    }
+    .bg{
+        position: relative;
+        height: 80%;
+    }
+    .signUp{
+        width: 100%;
+    }
+    .logo{
+        bottom: 10px;
+        top: auto;
+        position: absolute;
+    }
+    h3{
+        margin-top: 20px;
+    }
+    .form-group:nth-child(4){
+        margin-bottom: 20px;
+    }
+    .redir{
+        margin-top: 0px;
+    }
+}
+@media (max-width: 350px) {
+    .logo{
+        width: 5.5rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    .form-group{
+        width: 70%;
+    }
+
+}
