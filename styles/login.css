@@ -10,7 +10,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     height: 100vh;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 img, picture, video, canvas, svg {
     display: block;

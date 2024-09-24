@@ -21,7 +21,7 @@ body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     height: 100vh;
     display: flex;
 }
@@ -563,6 +563,8 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;;
 }
 
 .modal form {
@@ -585,6 +587,7 @@ h1 {
 .modal input[type="url"] {
     padding: 1.25rem;
     border-radius: 0.5rem;
+    background-color: whitesmoke;
     border: 1px solid #d1d5db;
     width: 100%;
     margin-bottom: 20px;

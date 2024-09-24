@@ -19,7 +19,7 @@ body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     height: 100vh;
     display: flex;
 }
@@ -507,6 +507,8 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;
 }
 
 .modal form {
@@ -522,12 +524,14 @@ h1{
     color: white;
     font-size: 1.125rem;
     font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="url"] {
     padding: 1.25rem;
+    background-color: whitesmoke;
     border-radius: 0.5rem;
     border: 1px solid #d1d5db;
     width: 100%;
@@ -588,6 +592,8 @@ h1{
 }
 
 .modal-song{
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;;
     background-color: #096c7c;
     box-shadow: 0 0 2px 100vw hsla(192, 93%, 5%, 0.569);
 }
