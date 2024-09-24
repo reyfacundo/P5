@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Album</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
@@ -101,29 +102,23 @@
     <div class="bg">
         <video src="/assets/bibi3.mp4" autoplay muted loop></video>
     </div>
-    <div class="hidden rounded-lg bg-red-800 absolute h-5/6 sm:h-4/6 sm:w-4/6 w-11/12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100000] shadow-[0_0_2px_100vw_rgba(0,0,0,0.5)] flex justify-center items-center flex-col" id="modal">
-        <form action="#" class="flex gap-5 flex-col w-4/6">
-            <label for="title" class="text-white text-lg font-semibold">Title</label>
-            <input type="text" name="titulo" id="title" class="p-5 rounded-lg border border-gray-300">
-            
-            <label for="description" class="text-white text-lg font-semibold">Description</label>
-            <input type="text" name="description" id="description" class="p-12 rounded-lg border border-gray-300">
-    
-            <div class="md:flex gap-10">
-                <div class="flex flex-col justify-center items-center flex-1">
-                    <label for="date" class="w-full text-left text-white">Release year</label>
-                    <input type="date" name="date" id="date" class="p-5 rounded-lg border border-gray-300 w-full">
-                </div>
-                <div class="flex flex-col justify-center items-center flex-1">
-                    <label for="url" class="w-full text-left text-white">Cover URL</label>
-                    <input type="url" name="url" id="url" class="p-5 rounded-lg border border-gray-300 w-full">
-                </div>
-            </div>
-    
-            <input type="button" value="Agregar" class="hover:scale-[1.02] sm:w-auto w-full transition-transform cursor-pointer bg-red-300 p-5 w-2/5 m-auto sm:font-medium rounded-lg">
+    <div class="modal hide">
+        <form action="#" id="modal-form">
+            <label for="title" class="modal-label">Title</label>
+            <input type="text" name="titulo" id="title" class="modal-input">
+
+            <label for="description" class="modal-label">Description</label>
+            <input type="text" name="description" id="description" class="modal-input">
+
+            <label for="date" class="modal-label">Release year</label>
+            <input type="date" name="date" id="date" class="modal-input">
+
+            <label for="url" class="modal-label">Cover URL</label>
+            <input type="url" name="url" id="url" class="modal-input">
+
+            <input type="button" value="Agregar" class="modal-button">
         </form>
-        
-        <div class="hover:scale-[1.03] transition-transform cursor-pointer close flex justify-center items-center text-center h-10 w-10 bg-red-300 absolute rounded-lg -top-1.5 -right-1.5 text-black text-lg font-semibold" id="close-modal">X</div>
+        <div class="close" id="close-modal">X</div>
     </div>
     <script src="/script.js"></script>
 </body>

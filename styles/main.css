@@ -386,6 +386,7 @@ h1 {
     transform: scale(1.01);
     filter: saturate(120%)
 }
+
 @media (max-width: 1350px) {
     .albums .albums-container .album-cover {
         width: 100%;
@@ -523,6 +524,12 @@ h1 {
         font-size: 90px;
         margin-right: 3rem;
     }
+    .modal input[type="button"]{
+        width: 100% !important;
+        }
+    .modal{
+        width: 80% !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -533,4 +540,105 @@ h1 {
     .login-info {
         gap: 0;
     }
+    .modal form {
+        width: 80% !important;
+    }
+}
+
+.hide{
+    display: none !important;
+}
+.modal {
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: #b93737;
+    position: fixed;
+    height: 70%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    box-shadow: 0 0 2px 100vw rgba(24, 0, 0, 0.568);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60.666%;
+    gap: 5px;
+}
+
+.modal label {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.modal input[type="text"],
+.modal input[type="date"],
+.modal input[type="url"] {
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#description {
+    padding: 3rem;
+}
+
+.modal .md\:flex {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #fc8181;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: -0.375rem;
+    right: -0.375rem;
+    color: black;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal input[type="button"] {
+    background-color: #fc8181;
+    border: none;
+    cursor: pointer;
+    padding: 1.25rem;
+    width: 40%;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.modal input[type="button"]:hover {
+    transform: scale(1.02);
+}
+
+.modal #description {
+    padding: 40px;
+}
+
+.close:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s;
 }
