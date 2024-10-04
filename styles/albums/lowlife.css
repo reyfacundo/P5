@@ -116,7 +116,7 @@ a {
 
 .bg {
     filter: blur(2px);
-    background-image: url(/assets/llp-cover.png);
+    background-image: url(../../assets/llp-cover.png);
     background-size: cover;
     background-position: center;
     position: absolute; 

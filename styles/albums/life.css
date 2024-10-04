@@ -116,7 +116,7 @@ a {
 
 .bg {
     filter: blur(2px);
-    background-image: url(/assets/25-cover.jpg);
+    background-image: url(../../assets/25-cover.jpg);
     background-size: cover;
     background-position: center;
     position: absolute; 
