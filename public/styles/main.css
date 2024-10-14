@@ -117,16 +117,18 @@ a {
 }
 
 .bg {
-    filter: blur(2px);
-    background-image: url(../../assets/llp-cover.png);
-    background-size: cover;
-    background-position: center;
     position: absolute;
+    z-index: -1;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+}
+
+.bg video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 main {
@@ -261,8 +263,8 @@ h1 {
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
     letter-spacing: 2px;
-    color: whitesmoke;
-    font-size: 2.5rem !important;
+    color: #000000;
+    font-size: 2.5rem;
     text-transform: uppercase;
 }
 
@@ -401,10 +403,6 @@ h1 {
     .second-half {
         gap: 20px;
     }
-
-    .modal {
-        width: 60% !important;
-    }
 }
 
 @media (max-width: 960px) {
@@ -444,16 +442,9 @@ h1 {
     .login-info {
         gap: 10px;
     }
-
-    .modal {
-        width: 80% !important;
-    }
 }
 
 @media (max-width: 800px) {
-    h1{
-        color: rgb(22, 22, 22);
-    }
     .logo {
         margin-top: 40px;
     }
@@ -468,24 +459,20 @@ h1 {
     }
 
     body {
-        /* display: block; */
         flex-direction: column-reverse;
         height: auto;
     }
 
     .bg {
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        filter: none;
-        width: 100%;
-        min-height: 2000px;
-        z-index: -1;
+        z-index: 1;
+    }
+
+    .bg video {
+        height: 600px;
     }
 
     main {
+        margin-top: 420px;
         width: 100%;
         height: auto;
         overflow: hidden;
@@ -537,26 +524,11 @@ h1 {
         font-size: 90px;
         margin-right: 3rem;
     }
-
-    .modal input[type="button"] {
-        width: 100% !important;
-    }
-
-    .modal {
-        width: 80% !important;
-    }
-
-    .modal form{
-        width: 70% !important;
-    }
-
-    .modal input[type="text"],
-    .modal input[type="date"],
-    .modal input[type="url"] {
-        margin-bottom: 10px !important;
-    }
     .modal input[type="button"]{
-        margin-top: 5px !important;
+        width: 100% !important;
+        }
+    .modal{
+        width: 80% !important;
     }
 }
 
@@ -568,35 +540,14 @@ h1 {
     .login-info {
         gap: 0;
     }
-
-    .modal {
-        height: 60% !important;
-        width: 95% !important;
-    }
-
-    .modal input[type="text"],
-    .modal input[type="date"],
-    .modal input[type="url"] {
-        margin-bottom: 10px !important;
-    }
-    .modal input[type="button"]{
-        padding: 10px !important;
-    }
-
     .modal form {
-        height: 60% !important;
         width: 80% !important;
     }
-
-    .modal input {
-        height: 50px !important;
-    }
 }
 
-.hide {
+.hide{
     display: none !important;
 }
-
 .modal {
     display: flex;
     border-radius: 0.5rem;
@@ -613,7 +564,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-right: 10px solid #ffffff;
-    border-bottom: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;;
 }
 
 .modal form {
@@ -622,21 +573,21 @@ h1 {
     justify-content: center;
     align-items: center;
     width: 60.666%;
+    gap: 5px;
 }
 
 .modal label {
     color: white;
     font-size: 1.125rem;
     font-weight: 600;
-    letter-spacing: 2px;
 }
 
 .modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="url"] {
     padding: 1.25rem;
-    background-color: whitesmoke;
     border-radius: 0.5rem;
+    background-color: whitesmoke;
     border: 1px solid #d1d5db;
     width: 100%;
     margin-bottom: 20px;
@@ -670,7 +621,7 @@ h1 {
 }
 
 .modal input[type="button"] {
-    background-color: #fc9494;
+    background-color: #fc8181;
     border: none;
     cursor: pointer;
     padding: 1.25rem;
@@ -695,18 +646,37 @@ h1 {
     transition: transform 0.2s;
 }
 
-.modal-song {
-    border-right: 10px solid #ffffff;
-    border-bottom: 10px solid #ffffff;
-    ;
-    background-color: #096c7c;
-    box-shadow: 0 0 2px 100vw hsla(192, 93%, 5%, 0.569);
+
+.fa-star{
+    color: rgb(43, 43, 43);
+    font-size: 2.1rem;
+}
+.fa-star:hover{
+    transition: transform 0.1s;
+    transform: rotate(25deg);
+}
+.fa-pencil:hover{
+    transition: transform 0.1s;
+    transform: rotate(20deg);
 }
 
-.modal-song input[type="button"] {
-    background-color: #acccc4;
+.checked{
+    color: rgb(230, 186, 68);
+}
+.fa-pencil{
+    font-size: 2.1rem;
+    color: rgb(39, 39, 39);
+}
+.album-options{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
-#close-modal-song {
-    background-color: #acccc4;
+.edit{
+    background-color: rgb(34, 34, 34);
+    border: none;
 }

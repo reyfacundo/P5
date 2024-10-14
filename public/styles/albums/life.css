@@ -116,7 +116,7 @@ a {
 
 .bg {
     filter: blur(2px);
-    background-image: url(../../assets//bibi-2.png);
+    background-image: url(../../assets/25-cover.jpg);
     background-size: cover;
     background-position: center;
     position: absolute; 
@@ -454,9 +454,9 @@ h1{
         top: 0;
         left: 0;
         width: 100%;
-        filter: none;
         min-height: 2000px;
         z-index: -1;
+        filter: none;
     }
 
     main {
@@ -683,4 +683,36 @@ h1{
 
 #close-modal-song {
     background-color: #acccc4;
+}
+.fa-star{
+    color: rgb(43, 43, 43);
+    font-size: 2.1rem;
+}
+.fa-star:hover{
+    transition: transform 0.1s;
+    transform: rotate(25deg);
+}
+.fa-pencil:hover{
+    transition: transform 0.1s;
+    transform: rotate(20deg);
+}
+
+.checked{
+    color: rgb(230, 186, 68);
+}
+.fa-pencil{
+    font-size: 2.1rem;
+    color: rgb(39, 39, 39);
+}
+.album-options{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.edit{
+    background-color: rgb(34, 34, 34);
+    border: none;
 }

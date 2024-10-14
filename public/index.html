@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
@@ -29,19 +29,29 @@
                 <img src="assets/albums-logo.png" alt="albums-logo" class="albums-logo">
                 <div class="albums-container">
                     <div class="album-cover">
-                        <a href="tabs/albums/life.html">
+                        <span class="album-options">
+                            <i class="fa fa-pencil"></i>
+                            <span class="fa fa-star checked"></span>
+                        </span>
+                        <a href="./html/albums/life.html">
                             <img src="assets/25-cover.jpg" alt="2521-album-cover">
                         </a>
                         <h2>Life is a Bi...</h2>
                     </div>
                     <div class="album-cover">
-                        <a href="tabs/albums/lowlife.html">
+                        <span class="album-options">
+                            <i class="fa fa-pencil"></i>
+                            <span class="fa fa-star"></span>
+                        </span> <a href="./html/albums/lowlife.html">
                             <img src="assets/llp-cover.png" alt="lowlife-princess-album-cover">
                         </a>
                         <h2>Lowlife Princess: Noir</h2>
                     </div>
                     <div class="album-cover">
-                        <a href="tabs/albums/kazino.html">
+                        <span class="album-options">
+                            <i class="fa fa-pencil"></i>
+                            <span class="fa fa-star"></span>
+                        </span> <a href="./html/albums/kazino.html">
                             <img src="assets/bibi-2.png" alt="bang-album-cover">
                         </a>
                         <h2>Kazino</h2>
@@ -76,7 +86,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tabs/tourDates.html">
+                            <a href="./html/tourDates.html">
                                 <div class="nav-item">
                                     Tour dates
                                 </div>
@@ -88,7 +98,7 @@
                             <img src="assets/pfp.svg" alt="profile-picture" class="pfp">
                             <!-- <h3>Test McTest</h3> -->
                         </div>
-                        <a href="tabs/login.html">
+                        <a href="./html/login.html">
                             <div class="nav-item">
                                 <img src="assets/logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Log-Out">
                             </div>
@@ -120,7 +130,25 @@
         </form>
         <div class="close" id="close-modal">X</div>
     </div>
-    <script src="script.js"></script>
+    <div class="edit modal hide">
+        <form action="#" id="modal-form">
+            <label for="title" class="modal-label">Title</label>
+            <input type="text" name="titulo" id="title" class="modal-input">
+
+            <label for="description" class="modal-label">Description</label>
+            <input type="text" name="description" id="description" class="modal-input">
+
+            <label for="date" class="modal-label">Release year</label>
+            <input type="date" name="date" id="date" class="modal-input">
+
+            <label for="url" class="modal-label">Cover URL</label>
+            <input type="url" name="url" id="url" class="modal-input">
+
+            <input type="button" value="Edit" class="modal-button">
+        </form>
+        <div class="close closeEdit" id="close-modal">X</div>
+    </div>
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>

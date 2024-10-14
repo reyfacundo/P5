@@ -1,32 +1,58 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     height: 100vh;
-    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: end;
+    position: relative;
 }
-img, picture, video, canvas, svg {
+
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
 }
-input, button, textarea, select {
+
+input,
+button,
+textarea,
+select {
     font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     overflow-wrap: break-word;
 }
+
+/* *{
+    color: white;
+} */
 
 .logo {
     width: 8rem;
     position: absolute;
-    left:30px;
+    right:30px;
     top: 30px;
 }
 
@@ -44,7 +70,7 @@ p, h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
 }
 
-.login {
+.signUp {
     background-color: #ffffff;
     width: 40%;
     height: 100%;
@@ -54,7 +80,7 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.login form {
+.signUp form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -98,22 +124,21 @@ h3 {
     letter-spacing: 1px;
 }
 
-input[type=button] {
+input[type=submit] {
     background-color: #096e7a;
     border: none;
     color: white;
-    width: 100%;
     cursor: pointer;
 }
-input[type=button]:hover{
+input[type=submit]:hover{
     background-color: #085b64;
     outline: none;
 }
-input[type=button]:focus{
+input[type=submit]:focus{
     background-color: #085b64;
     outline: none;
 }
-input[type=button]:active{
+input[type=submit]:active{
     transform: scale(1.01);
 }
 .redir {
@@ -129,18 +154,31 @@ input[type=button]:active{
     text-decoration:underline;
 }
 
-
 @media (max-width: 960px) {
     body{
         display:flex ;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .bg{
-        position: static;
+        position: relative;
         height: 80%;
     }
-    .login{
+    .signUp{
         width: 100%;
+    }
+    .logo{
+        bottom: 10px;
+        top: auto;
+        position: absolute;
+    }
+    h3{
+        margin-top: 20px;
+    }
+    .form-group:nth-child(4){
+        margin-bottom: 20px;
+    }
+    .redir{
+        margin-top: 0px;
     }
 }
 @media (max-width: 350px) {

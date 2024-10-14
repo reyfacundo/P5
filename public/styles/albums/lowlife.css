@@ -8,9 +8,11 @@
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     color: inherit;
 }
+
 li {
     list-style: none;
 }
@@ -71,7 +73,7 @@ nav ul {
     justify-content: space-between;
     align-items: center;
     border-left: 1px solid rgba(15, 15, 15, 0.911);
-    padding:13px 20px 13px 20px;
+    padding: 13px 20px 13px 20px;
 }
 
 nav ul span {
@@ -116,15 +118,15 @@ a {
 
 .bg {
     filter: blur(2px);
-    background-image: url(../../assets/25-cover.jpg);
+    background-image: url(../../assets/llp-cover.png);
     background-size: cover;
     background-position: center;
-    position: absolute; 
+    position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
     width: 100%;
-    height: 100%; 
-    z-index: -1; 
+    height: 100%;
+    z-index: -1;
 }
 
 main {
@@ -151,6 +153,7 @@ main {
     margin: 0 auto;
     width: 90%;
 }
+
 .logo {
     width: 13rem;
 }
@@ -210,43 +213,50 @@ main {
 
 /* WebKit Scrollbars (Chrome, Safari) */
 ::-webkit-scrollbar {
-    width: 10px; /* width */
+    width: 10px;
+    /* width */
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track */
+    background: #f1f1f1;
+    /* Track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #b93434; /* Handle */
+    background: #b93434;
+    /* Handle */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #942121; /* Handle on hover */
+    background: #942121;
+    /* Handle on hover */
 }
 
 /* Firefox Scrollbars */
 * {
-    scrollbar-width: thin; /* auto, thin, none */
-    scrollbar-color: #b93434 #f1f1f1; /* Handle color Track color */
+    scrollbar-width: thin;
+    /* auto, thin, none */
+    scrollbar-color: #b93434 #f1f1f1;
+    /* Handle color Track color */
 }
 
 
-.right-container{
+.right-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow: auto;
 }
 
-.album-container{
+.album-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
 }
-h1{
+
+h1 {
     text-align: center;
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
@@ -255,18 +265,21 @@ h1{
     font-size: 2.5rem !important;
     text-transform: uppercase;
 }
-.album-container p{
+
+.album-container p {
     width: 60%;
     background-color: #f5f5f5e3;
     padding: 30px;
     font-size: 1.1rem;
     border-radius: 12px;
 }
-.songs{
+
+.songs {
     width: 60%;
     margin-bottom: 20px;
 }
-.songs li{
+
+.songs li {
     display: flex;
     border-radius: 4px;
     height: 70px;
@@ -275,21 +288,24 @@ h1{
     padding: 15px;
     background-color: #f5f5f5d0;
 }
-.songs li:hover{
+
+.songs li:hover {
     transition: transform 0.3s;
     transform: scale(1.02);
 }
-.first-half{
+
+.first-half {
     display: flex;
     gap: 1vw;
     align-items: center;
 }
 
-.songs li span img{
+.songs li span img {
     width: 40px;
     border-radius: 4px;
 }
-.second-half{
+
+.second-half {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -297,14 +313,17 @@ h1{
     position: relative;
 }
 
-.songs li .second-half img{
+.songs li .second-half img {
     cursor: pointer;
 }
-.songs li .second-half img:hover, .songs .add-song:hover{
+
+.songs li .second-half img:hover,
+.songs .add-song:hover {
     filter: contrast(120%) brightness(110%);
 }
-.songs .add-song{
-    background-color:#b93434d3;
+
+.songs .add-song {
+    background-color: #b93434d3;
     color: white;
     font-size: 3rem;
     display: flex;
@@ -313,10 +332,11 @@ h1{
     cursor: pointer;
 }
 
-.first-half span:nth-child(1){
+.first-half span:nth-child(1) {
     font-weight: 500;
 }
-.first-half h3{
+
+.first-half h3 {
     width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -324,28 +344,32 @@ h1{
     color: black;
     font-size: 1rem;
     font-weight: 600
+}
 
-}
-.second-half span:nth-child(2){
+.second-half span:nth-child(2) {
     font-weight: 600;
 }
-.second-half span:nth-child(1){
+
+.second-half span:nth-child(1) {
     font-weight: 600;
-    color:#b93434;
+    color: #b93434;
 }
+
 .triangle-right {
-	width: 0;
-	height: 0;
-	border-top: 7px solid transparent;
-	border-left: 13px solid #646464;
-	border-bottom: 7px solid transparent;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-left: 13px solid #646464;
+    border-bottom: 7px solid transparent;
 }
-.add-album h2{
+
+.add-album h2 {
     color: white;
     font-size: 4rem;
 
 }
-.add-album{
+
+.add-album {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -354,11 +378,13 @@ h1{
     border-radius: 7px;
     background-color: rgba(167, 17, 17, 0.671);
 }
-.add-album:hover{
+
+.add-album:hover {
     transition: transform 0.1s;
     transform: scale(1.01);
-    filter:saturate(120%)
+    filter: saturate(120%)
 }
+
 @media (max-width: 1350px) {
     .albums .albums-container .album-cover {
         width: 100%;
@@ -453,10 +479,10 @@ h1{
         position: absolute;
         top: 0;
         left: 0;
+        filter: none;
         width: 100%;
         min-height: 2000px;
         z-index: -1;
-        filter: none;
     }
 
     main {
@@ -683,4 +709,36 @@ h1{
 
 #close-modal-song {
     background-color: #acccc4;
+}
+.fa-star{
+    color: rgb(43, 43, 43);
+    font-size: 2.1rem;
+}
+.fa-star:hover{
+    transition: transform 0.1s;
+    transform: rotate(25deg);
+}
+.fa-pencil:hover{
+    transition: transform 0.1s;
+    transform: rotate(20deg);
+}
+
+.checked{
+    color: rgb(230, 186, 68);
+}
+.fa-pencil{
+    font-size: 2.1rem;
+    color: rgb(39, 39, 39);
+}
+.album-options{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.edit{
+    background-color: rgb(34, 34, 34);
+    border: none;
 }

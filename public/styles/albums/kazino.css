@@ -8,11 +8,9 @@
     margin: 0;
     padding: 0;
 }
-
-a {
+a{
     color: inherit;
 }
-
 li {
     list-style: none;
 }
@@ -73,7 +71,7 @@ nav ul {
     justify-content: space-between;
     align-items: center;
     border-left: 1px solid rgba(15, 15, 15, 0.911);
-    padding: 13px 20px 13px 20px;
+    padding:13px 20px 13px 20px;
 }
 
 nav ul span {
@@ -117,18 +115,16 @@ a {
 }
 
 .bg {
-    position: absolute;
-    z-index: -1;
+    filter: blur(2px);
+    background-image: url(../../assets//bibi-2.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute; 
     top: 0;
+    left: 0; 
     width: 100%;
-    height: 100%;
-}
-
-.bg video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%; 
+    z-index: -1; 
 }
 
 main {
@@ -155,7 +151,6 @@ main {
     margin: 0 auto;
     width: 90%;
 }
-
 .logo {
     width: 13rem;
 }
@@ -215,73 +210,63 @@ main {
 
 /* WebKit Scrollbars (Chrome, Safari) */
 ::-webkit-scrollbar {
-    width: 10px;
-    /* width */
+    width: 10px; /* width */
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    /* Track */
+    background: #f1f1f1; /* Track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #b93434;
-    /* Handle */
+    background: #b93434; /* Handle */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #942121;
-    /* Handle on hover */
+    background: #942121; /* Handle on hover */
 }
 
 /* Firefox Scrollbars */
 * {
-    scrollbar-width: thin;
-    /* auto, thin, none */
-    scrollbar-color: #b93434 #f1f1f1;
-    /* Handle color Track color */
+    scrollbar-width: thin; /* auto, thin, none */
+    scrollbar-color: #b93434 #f1f1f1; /* Handle color Track color */
 }
 
 
-.right-container {
+.right-container{
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow: auto;
 }
 
-.album-container {
+.album-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
 }
-
-h1 {
+h1{
     text-align: center;
     margin-bottom: 20px;
     font-family: "Abril Fatface", serif;
     letter-spacing: 2px;
-    color: #000000;
-    font-size: 2.5rem;
+    color: whitesmoke;
+    font-size: 2.5rem !important;
     text-transform: uppercase;
 }
-
-.album-container p {
+.album-container p{
     width: 60%;
     background-color: #f5f5f5e3;
     padding: 30px;
     font-size: 1.1rem;
     border-radius: 12px;
 }
-
-.songs {
+.songs{
     width: 60%;
     margin-bottom: 20px;
 }
-
-.songs li {
+.songs li{
     display: flex;
     border-radius: 4px;
     height: 70px;
@@ -290,24 +275,21 @@ h1 {
     padding: 15px;
     background-color: #f5f5f5d0;
 }
-
-.songs li:hover {
+.songs li:hover{
     transition: transform 0.3s;
     transform: scale(1.02);
 }
-
-.first-half {
+.first-half{
     display: flex;
     gap: 1vw;
     align-items: center;
 }
 
-.songs li span img {
+.songs li span img{
     width: 40px;
     border-radius: 4px;
 }
-
-.second-half {
+.second-half{
     display: flex;
     justify-content: end;
     align-items: center;
@@ -315,17 +297,14 @@ h1 {
     position: relative;
 }
 
-.songs li .second-half img {
+.songs li .second-half img{
     cursor: pointer;
 }
-
-.songs li .second-half img:hover,
-.songs .add-song:hover {
+.songs li .second-half img:hover, .songs .add-song:hover{
     filter: contrast(120%) brightness(110%);
 }
-
-.songs .add-song {
-    background-color: #b93434d3;
+.songs .add-song{
+    background-color:#b93434d3;
     color: white;
     font-size: 3rem;
     display: flex;
@@ -334,11 +313,10 @@ h1 {
     cursor: pointer;
 }
 
-.first-half span:nth-child(1) {
+.first-half span:nth-child(1){
     font-weight: 500;
 }
-
-.first-half h3 {
+.first-half h3{
     width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -346,32 +324,28 @@ h1 {
     color: black;
     font-size: 1rem;
     font-weight: 600
-}
 
-.second-half span:nth-child(2) {
+}
+.second-half span:nth-child(2){
     font-weight: 600;
 }
-
-.second-half span:nth-child(1) {
+.second-half span:nth-child(1){
     font-weight: 600;
-    color: #b93434;
+    color:#b93434;
 }
-
 .triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-left: 13px solid #646464;
-    border-bottom: 7px solid transparent;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-left: 13px solid #646464;
+	border-bottom: 7px solid transparent;
 }
-
-.add-album h2 {
+.add-album h2{
     color: white;
     font-size: 4rem;
 
 }
-
-.add-album {
+.add-album{
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -380,13 +354,11 @@ h1 {
     border-radius: 7px;
     background-color: rgba(167, 17, 17, 0.671);
 }
-
-.add-album:hover {
+.add-album:hover{
     transition: transform 0.1s;
     transform: scale(1.01);
-    filter: saturate(120%)
+    filter:saturate(120%)
 }
-
 @media (max-width: 1350px) {
     .albums .albums-container .album-cover {
         width: 100%;
@@ -402,6 +374,10 @@ h1 {
 
     .second-half {
         gap: 20px;
+    }
+
+    .modal {
+        width: 60% !important;
     }
 }
 
@@ -442,9 +418,16 @@ h1 {
     .login-info {
         gap: 10px;
     }
+
+    .modal {
+        width: 80% !important;
+    }
 }
 
 @media (max-width: 800px) {
+    h1{
+        color: rgb(22, 22, 22);
+    }
     .logo {
         margin-top: 40px;
     }
@@ -459,20 +442,24 @@ h1 {
     }
 
     body {
+        /* display: block; */
         flex-direction: column-reverse;
         height: auto;
     }
 
     .bg {
-        z-index: 1;
-    }
-
-    .bg video {
-        height: 600px;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        filter: none;
+        min-height: 2000px;
+        z-index: -1;
     }
 
     main {
-        margin-top: 420px;
         width: 100%;
         height: auto;
         overflow: hidden;
@@ -524,11 +511,26 @@ h1 {
         font-size: 90px;
         margin-right: 3rem;
     }
-    .modal input[type="button"]{
+
+    .modal input[type="button"] {
         width: 100% !important;
-        }
-    .modal{
+    }
+
+    .modal {
         width: 80% !important;
+    }
+
+    .modal form{
+        width: 70% !important;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="date"],
+    .modal input[type="url"] {
+        margin-bottom: 10px !important;
+    }
+    .modal input[type="button"]{
+        margin-top: 5px !important;
     }
 }
 
@@ -540,14 +542,35 @@ h1 {
     .login-info {
         gap: 0;
     }
+
+    .modal {
+        height: 60% !important;
+        width: 95% !important;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="date"],
+    .modal input[type="url"] {
+        margin-bottom: 10px !important;
+    }
+    .modal input[type="button"]{
+        padding: 10px !important;
+    }
+
     .modal form {
+        height: 60% !important;
         width: 80% !important;
+    }
+
+    .modal input {
+        height: 50px !important;
     }
 }
 
-.hide{
+.hide {
     display: none !important;
 }
+
 .modal {
     display: flex;
     border-radius: 0.5rem;
@@ -564,7 +587,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     border-right: 10px solid #ffffff;
-    border-bottom: 10px solid #ffffff;;
+    border-bottom: 10px solid #ffffff;
 }
 
 .modal form {
@@ -573,21 +596,21 @@ h1 {
     justify-content: center;
     align-items: center;
     width: 60.666%;
-    gap: 5px;
 }
 
 .modal label {
     color: white;
     font-size: 1.125rem;
     font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="url"] {
     padding: 1.25rem;
-    border-radius: 0.5rem;
     background-color: whitesmoke;
+    border-radius: 0.5rem;
     border: 1px solid #d1d5db;
     width: 100%;
     margin-bottom: 20px;
@@ -621,7 +644,7 @@ h1 {
 }
 
 .modal input[type="button"] {
-    background-color: #fc8181;
+    background-color: #fc9494;
     border: none;
     cursor: pointer;
     padding: 1.25rem;
@@ -644,4 +667,53 @@ h1 {
 .close:hover {
     transform: scale(1.03);
     transition: transform 0.2s;
+}
+
+.modal-song {
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;
+    ;
+    background-color: #096c7c;
+    box-shadow: 0 0 2px 100vw hsla(192, 93%, 5%, 0.569);
+}
+
+.modal-song input[type="button"] {
+    background-color: #acccc4;
+}
+
+#close-modal-song {
+    background-color: #acccc4;
+}
+
+.fa-star{
+    color: rgb(43, 43, 43);
+    font-size: 2.1rem;
+}
+.fa-star:hover{
+    transition: transform 0.1s;
+    transform: rotate(25deg);
+}
+.fa-pencil:hover{
+    transition: transform 0.1s;
+    transform: rotate(20deg);
+}
+
+.checked{
+    color: rgb(230, 186, 68);
+}
+.fa-pencil{
+    font-size: 2.1rem;
+    color: rgb(39, 39, 39);
+}
+.album-options{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.edit{
+    background-color: rgb(34, 34, 34);
+    border: none;
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOUR DATES</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="flex flex-col h-screen font-montserrat bg-black">
+    <div class="video-container relative flex justify-center bg-black h-[45%] w-full">
+        <video class="h-full w-full object-cover filter blur-sm" src="../assets/bibi5.mp4" autoplay muted loop></video>
+        <a href="../index.html" class="absolute sm:h-3/5 h-2/5 bottom-0 logo">
+            <img src="../assets/logo.svg" alt="logo" class="h-full w-auto">
+        </a>
+    </div>
+    <ul class="flex justify-center items-center gap-10 flex-1 uppercase">
+        <span class="flex flex-col gap-5">
+            <li class=" text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • las vegas</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets('Las Vegas', event)" class="cursor-pointer ml-auto pt-1.5" alt="getTicket">
+            </li>
+            <li class=" text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • Tokyo</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets( 'Tokyo', event)" class="cursor-pointer ml-auto pt-1.5"
+                    alt="getTicket">
+            </li>
+            <li class=" text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • Brisbane</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets( 'Brisbane', event)" class="cursor-pointer ml-auto pt-1.5"
+                    alt="getTicket">
+            </li>
+        </span>
+        <span class="flex flex-col gap-5">
+            <li class=" text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • Inglewood</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets( 'Inglewood', event)" class="cursor-pointer ml-auto pt-1.5"
+                    alt="getTicket">
+            </li>
+            <li class=" text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • Auckland</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets( 'Auckland', event)" class="cursor-pointer ml-auto pt-1.5"
+                    alt="getTicket">
+            </li>
+            <li class="text-slate-100 sm:text-xl text-l">
+                <h2 class="text-red-600">nov 14 • Dunedin</h2>
+                <h3>borcelle area</h3>
+                <img src="../assets/confirmation_number_24dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg"
+                    onclick="getTickets( 'Dunedin')" class="cursor-pointer ml-auto pt-1.5"
+                    alt="getTicket">
+            </li>
+        </span>
+    </ul>
+    <p class="text-center mb-10 sm:text-2xl text-xl uppercase flex flex-col">
+        <span class="text-gray-500" id="user">Hey there!</span>
+        <span class="text-slate-100 get">Get your tickets!</span>
+    </p>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="../tourDates.js"></script>
+</body>
+
+</html>
