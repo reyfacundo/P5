@@ -1,5 +1,6 @@
 import { editAlbumForm } from "./validators.js";
 import { addSongForm } from "./validators.js";
+import { getAlbums } from "./album.js";
 
 document.querySelector('.add-album').addEventListener('click', e => {
     e.preventDefault();
@@ -43,3 +44,6 @@ document.querySelectorAll('.fa-pencil').forEach(e => {
 document.querySelector('.closeEdit').addEventListener('click', () => {
     document.querySelector('.edit').classList.toggle('hide');
 })
+
+
+getAlbums()

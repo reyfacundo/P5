@@ -15,7 +15,7 @@ function loginValidate(e) {
         return
     }
     if (pass.length <= 6)
-        window.location.href = "/index.html"
+        window.location.href = "/"
 }
 
 const signUpForm = document.querySelector('#signUpForm');
