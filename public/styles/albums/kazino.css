@@ -576,7 +576,7 @@ h1{
     border-radius: 0.5rem;
     background-color: #b93737;
     position: fixed;
-    height: 70%;
+    height: 75%;
     width: 50%;
     top: 50%;
     left: 50%;
@@ -587,7 +587,7 @@ h1{
     align-items: center;
     flex-direction: column;
     border-right: 10px solid #ffffff;
-    border-bottom: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;;
 }
 
 .modal form {
@@ -596,24 +596,24 @@ h1{
     justify-content: center;
     align-items: center;
     width: 60.666%;
+    gap: 5px;
 }
 
 .modal label {
     color: white;
     font-size: 1.125rem;
     font-weight: 600;
-    letter-spacing: 2px;
 }
 
 .modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="url"] {
-    padding: 1.25rem;
-    background-color: whitesmoke;
+    padding: 1rem;
     border-radius: 0.5rem;
+    background-color: whitesmoke;
     border: 1px solid #d1d5db;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #description {

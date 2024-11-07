@@ -193,3 +193,14 @@ input[type=submit]:active{
     }
 
 }
+
+#length{
+    text-align: center;
+    display: none;
+}
+.invalid{
+    color:#cf3937;
+}
+.valid{
+    color: #5db161;
+}

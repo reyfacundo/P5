@@ -1,39 +1,80 @@
-// const axios = require('axios');
+import { editAlbumForm } from "./validators.js";
+import { addSongForm } from "./validators.js";
+import { changeAlbum, icons, getAlbums, deleteAlbum, addAlbum, addSong, deleteSong } from "./albumRender.js";
+import { getAlbum } from "./albumRender.js";
+import { getAlbumDataset } from "./albumRender.js";
 
-export const getAlbums = async () => {
-    try {
-        const response = await axios.get('/band')
-        response.data.map((album) => {
-            console.log(album)
-            renderAlbums(album)
-        })
+document.querySelector('.albums-container').addEventListener('click', async (e) => {
+    if (e.target.classList.contains('fa-star')) {
+        e.target.classList.toggle('checked');
     }
-    catch (error) {
-        console.log(error)
-        // Aviso de error al cargar los albums
+    if (e.target.classList.contains('fa-pencil')) {
+        const albumId = e.target.closest('li').dataset.id
+        const album = await getAlbumDataset(albumId);
+        console.log(album.yearOfRelease)
+        document.querySelector('.edit form #title').value = album.title;
+        document.querySelector('.edit form #description').value = album.description;
+        const dateOnly = album.yearOfRelease.split("T")[0];
+        document.querySelector('.edit form #date').value = dateOnly;
+        document.querySelector('.edit form #url').value = album.url;
+        document.querySelector('.edit').classList.toggle('hide');
     }
-}
-function renderAlbums(album){
-    const albumCover = document.createElement('div');
-    const albumOptions = document.createElement('span');
-    const icon = document.createElement('i');
-    const star = document.createElement('span');
-    const a = document.createElement('a');
-    const img = document.createElement('img');
-    const h2 = document.createElement('h2');
-    const container = document.querySelector('.albums-container');
+    if (e.target.classList.contains('album-cover')) {
+        const id = e.target.dataset.id
+        window.location.href = `./album.html?album=${id}`
+        // getAlbum()
+        // redirect(e.target.dataset._id);
+    }
+    if(e.target.classList.contains('fa-trash')){
+        deleteAlbum()
+    }
+});
 
-    albumCover.classList.add('album-cover');
-    albumOptions.classList.add('album-options');
-    icon.classList.add('fa','fa-pencil');
-    star.classList.add('fa','fa-star');
-    a.href = "./html/albums/life.html";
-    img.src = "./assets/25-cover.jpg";
-    img.alt = "2521-album-cover";
-    h2.textContent = 'asd';
+document.querySelector('.add-album').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.modal').classList.toggle('hide');
+});
+document.querySelector('.addAlbum .modal-button').addEventListener('click', e => {
+    addAlbum();
+    e.preventDefault();
+});
 
-    albumOptions.append(icon,star);
-    a.appendChild(img)
-    albumCover.append(albumOptions,a,h2);
-    container.appendChild(albumCover)
-}
+document.querySelector('.edit .modal-button').addEventListener('click', e => {
+    e.preventDefault();
+    changeAlbum();
+    document.querySelector('.edit').classList.toggle('hide');
+});
+
+document.querySelector('#close-modal').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.modal').classList.toggle('hide');
+});
+
+
+const openSongModal = document.querySelector('.add-song');
+if (openSongModal) openSongModal.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.modal-song').classList.toggle('hide');
+});
+
+const closeSongModal = document.querySelector('#close-modal-song');
+if (closeSongModal) closeSongModal.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.modal-song').classList.toggle('hide');
+});
+
+
+document.querySelector('.modal-song .modal-button').addEventListener('click', e => {
+    addSong()
+})
+
+document.querySelector('.closeEdit').addEventListener('click', () => {
+    document.querySelector('.edit').classList.toggle('hide');
+})
+document.querySelector('.album-container').addEventListener('click', e => {
+    if(e.target.classList.contains('fa-trash')){
+        deleteSong(e)
+    }
+})
+getAlbums().then(() => icons());
+getAlbum();

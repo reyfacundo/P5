@@ -14,8 +14,8 @@ const Album = new mongoose.Schema({
             message: 'Release date should be greater than 0',
         },
     },
-    songs: [{ title: { type: String, required: true }, duration: { type: Number, required: true } }],
-    coverImageUrl: { type: String }
+    songs: [{ title: { type: String, required: true }, duration: { type: Number, required: true }, url: { type: String}}],
+    coverImageUrl: { type: String, default:'../assets/album-placeholder.png'}
 });
 
 module.exports = mongoose.model('Album', Album);

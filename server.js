@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const UserSchema = require('./models/users')
 const AlbumSchema = require('./models/album')
-const usersRouter = require('./routes/albums')
+const usersRouter = require('./routes/users')
 const albumsRouter = require('./routes/albums')
 
 const express = require('express')

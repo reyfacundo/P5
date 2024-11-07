@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 a{
     color: inherit;
 }
@@ -116,10 +119,12 @@ a {
 
 .bg {
     filter: blur(2px);
-    background-image: url(../../assets/25-cover.jpg);
+    /* background-image: url(../../assets/25-cover.jpg); */
+    background-color: black;
     background-size: cover;
     background-position: center;
     position: absolute; 
+    filter: brightness(80%);
     top: 0;
     left: 0; 
     width: 100%;
@@ -185,11 +190,22 @@ main {
 }
 
 .albums .albums-container .album-cover {
-    width: 70%;
-    display: flex;
+    width: 65%;
+    height: 450px;
     position: relative;
+    overflow: hidden; 
+    cursor: pointer;
 }
-
+.albums .albums-container .album-cover img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    
+}
+.albums .albums-container .album-cover a{
+    pointer-events: none;
+}
 .albums .albums-container .album-cover h2 {
     font-size: 1.1rem;
     position: absolute;
@@ -207,6 +223,7 @@ main {
     transform: scale(1.05);
     cursor: pointer;
 }
+
 
 /* WebKit Scrollbars (Chrome, Safari) */
 ::-webkit-scrollbar {
@@ -300,17 +317,21 @@ h1{
 .songs li .second-half img{
     cursor: pointer;
 }
-.songs li .second-half img:hover, .songs .add-song:hover{
-    filter: contrast(120%) brightness(110%);
+.songs li .second-half img:hover, .add-song:hover{
+    filter: contrast(105%) brightness(105%);
 }
-.songs .add-song{
-    background-color:#b93434d3;
+.add-song{
+    border-radius: 5px;
+    width: 50%;
+    margin: 0  auto;
+    background-color:#20808fe0;
     color: white;
     font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 .first-half span:nth-child(1){
@@ -398,9 +419,6 @@ h1{
         gap: 20px;
     }
 
-    .second-half span:nth-child(2) {
-        display: none;
-    }
 
     .nav-item {
         font-size: 1rem;
@@ -474,25 +492,12 @@ h1{
         height: auto;
     }
 
-    .songs li .first-half span,
-    .songs li .first-half div {
-        display: none;
-    }
-
-    .songs li .first-half h3 {
+    /* .songs li .first-half h3 {
         font-size: 13px;
-    }
+    } */
 
     .songs li {
-        padding: 0;
-    }
-
-    .songs li span img {
-        height: 100%;
-        width: 20%;
-        border-radius: 4px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        padding: 10px;
     }
 
     .second-half {
@@ -512,7 +517,7 @@ h1{
         margin-right: 3rem;
     }
 
-    .modal input[type="button"] {
+    .modal input[type="button"],.modal-button {
         width: 100% !important;
     }
 
@@ -526,10 +531,16 @@ h1{
 
     .modal input[type="text"],
     .modal input[type="date"],
-    .modal input[type="url"] {
-        margin-bottom: 10px !important;
+    .modal input[type="url"],
+    .modal input[type="number"] {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: whitesmoke;
+        border: 1px solid #d1d5db;
+        width: 100%;
+        margin-bottom: 10px;
     }
-    .modal input[type="button"]{
+    .modal input[type="button"],.modal-button{
         margin-top: 5px !important;
     }
 }
@@ -550,13 +561,14 @@ h1{
 
     .modal input[type="text"],
     .modal input[type="date"],
-    .modal input[type="url"] {
+    .modal input[type="url"],
+    .modal input[type="number"]
+    {
         margin-bottom: 10px !important;
     }
-    .modal input[type="button"]{
+    .modal input[type="button"],.modal-button{
         padding: 10px !important;
     }
-
     .modal form {
         height: 60% !important;
         width: 80% !important;
@@ -576,7 +588,7 @@ h1{
     border-radius: 0.5rem;
     background-color: #b93737;
     position: fixed;
-    height: 70%;
+    height: 75%;
     width: 50%;
     top: 50%;
     left: 50%;
@@ -587,7 +599,7 @@ h1{
     align-items: center;
     flex-direction: column;
     border-right: 10px solid #ffffff;
-    border-bottom: 10px solid #ffffff;
+    border-bottom: 10px solid #ffffff;;
 }
 
 .modal form {
@@ -596,24 +608,25 @@ h1{
     justify-content: center;
     align-items: center;
     width: 60.666%;
+    gap: 5px;
 }
 
 .modal label {
     color: white;
     font-size: 1.125rem;
     font-weight: 600;
-    letter-spacing: 2px;
 }
 
 .modal input[type="text"],
 .modal input[type="date"],
-.modal input[type="url"] {
-    padding: 1.25rem;
-    background-color: whitesmoke;
+.modal input[type="url"],
+.modal input[type="number"] {
+    padding: 1rem;
     border-radius: 0.5rem;
+    background-color: whitesmoke;
     border: 1px solid #d1d5db;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #description {
@@ -643,7 +656,7 @@ h1{
     cursor: pointer;
 }
 
-.modal input[type="button"] {
+.modal input[type="button"],.modal-button{
     background-color: #fc9494;
     border: none;
     cursor: pointer;
@@ -656,10 +669,9 @@ h1{
     transition: transform 0.2s;
 }
 
-.modal input[type="button"]:hover {
+.modal input[type="button"]:hover, .modal-button:hover{
     transform: scale(1.02);
 }
-
 .modal #description {
     padding: 40px;
 }
@@ -696,11 +708,14 @@ h1{
     transition: transform 0.1s;
     transform: rotate(20deg);
 }
-
+.fa-trash:hover{
+    transition: transform 0.1s;
+    transform: rotate(7deg);
+}
 .checked{
     color: rgb(230, 186, 68);
 }
-.fa-pencil{
+.fa-pencil, .fa-trash{
     font-size: 2.1rem;
     color: rgb(39, 39, 39);
 }
@@ -715,4 +730,8 @@ h1{
 .edit{
     background-color: rgb(34, 34, 34);
     border: none;
+}
+.song-delete{
+    color: #c15252;
+    cursor: pointer;
 }

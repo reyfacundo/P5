@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIBI</title>
+    <title>LIFE IS A BI..</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles//albums/life.css">
 </head>
+
 
 <body>
     <main>
         <div class="container">
-            <a href="index.html">
-                <img src="./assets/logo.svg" alt="logo" class="logo">
+            <a href="../../index.html">
+                <img src="../../assets/logo.svg" alt="logo" class="logo">
             </a>
             <div class="bio-container">
                 <p><strong>BIBI (비비)</strong>, born on September 27, 1998, is a South Korean singer, songwriter, and
@@ -26,14 +29,14 @@
                 </p>
             </div>
             <div class="albums">
-                <img src="./assets/albums-logo.png" alt="albums-logo" class="albums-logo">
-                <ul class="albums-container">
-                </ul>
+                <img src="../../assets/albums-logo.png" alt="albums-logo" class="albums-logo">
+                <div class="albums-container">
+                </div>
                 <div class="add-album">
                     <a href="#">
                         <div></div>
                     </a>
-                    <h2 class="add-album">+</h2>
+                    <h2>+</h2>
                 </div>
             </div>
         </div>
@@ -43,13 +46,6 @@
             <nav>
                 <ul>
                     <span>
-                        <!-- <li>
-                            <a href="/index.html">
-                                <div class="nav-item">
-                                    Add album
-                                </div>
-                            </a>
-                        </li> -->
                         <li>
                             <a href="#">
                                 <div class="nav-item">
@@ -67,22 +63,29 @@
                     </span>
                     <li class="login-info">
                         <div>
-                            <img src="./assets/pfp.svg" alt="profile-picture" class="pfp">
+                            <img src="../../assets/pfp.svg" alt="profile-picture" class="pfp">
                             <!-- <h3>Test McTest</h3> -->
                         </div>
                         <a href="./html/login.html">
                             <div class="nav-item">
-                                <img src="./assets/logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Log-Out">
+                                <img src="../../assets/logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Log-Out">
                             </div>
                         </a>
                     </li>
                 </ul>
+                <!-- <div class="test">aa</div> -->
             </nav>
         </header>
+        <div class="album-container">
+        </div>
+        <li class="add-song">
+            <span>
+                <span>+</span>
+            </span>
+        </li>
     </span>
 
     <div class="bg">
-        <video src="./assets/bibi3.mp4" autoplay muted loop></video>
     </div>
     <div class="modal hide addAlbum">
         <form action="#" id="modal-form">
@@ -98,9 +101,24 @@
             <label for="url" class="modal-label">Cover URL</label>
             <input type="url" name="url" id="url" class="modal-input">
 
-            <input type="button" value="Agregar" class="modal-button">
+            <input type="button" value="Add" class="modal-button">
         </form>
         <div class="close" id="close-modal">X</div>
+    </div>
+    <div class="modal modal-song hide">
+        <form action="#" id="modal-form">
+            <label for="title" class="modal-label">Title</label>
+            <input type="text" name="titulo" id="title" class="modal-input">
+
+            <label for="description" class="modal-label">Duration</label>
+            <input type="number" name="duration" id="duration" class="modal-input">
+
+            <label for="url" class="modal-label">URL</label>
+            <input type="url" name="url" id="url" class="modal-input">
+
+            <input type="button" value="Agregar" class="modal-button">
+        </form>
+        <div class="close" id="close-modal-song">X</div>
     </div>
     <div class="edit modal hide">
         <form action="#" id="modal-form">
@@ -114,14 +132,14 @@
             <input type="date" name="date" id="date" class="modal-input">
 
             <label for="url" class="modal-label">Cover URL</label>
-            <input type="url" name="url" id="url" class="modal-input">
+            <input type="text" name="url" id="url" class="modal-input">
 
             <input type="button" value="Edit" class="modal-button">
         </form>
         <div class="close closeEdit" id="close-modal">X</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/album.js"></script>
 </body>
 
 </html>

@@ -190,11 +190,22 @@ main {
 }
 
 .albums .albums-container .album-cover {
-    width: 70%;
-    display: flex;
+    width: 65%;
+    height: 450px;
     position: relative;
+    overflow: hidden; 
+    cursor: pointer;
 }
-
+.albums .albums-container .album-cover img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    
+}
+.albums .albums-container .album-cover a{
+    pointer-events: none;
+}
 .albums .albums-container .album-cover h2 {
     font-size: 1.1rem;
     position: absolute;
@@ -357,19 +368,13 @@ h1 {
     color: #b93434;
 }
 
-.triangle-right {
+/* .triangle-right {
     width: 0;
     height: 0;
     border-top: 7px solid transparent;
     border-left: 13px solid #646464;
     border-bottom: 7px solid transparent;
-}
-
-.add-album h2 {
-    color: white;
-    font-size: 4rem;
-
-}
+} */
 
 .add-album {
     cursor: pointer;
@@ -379,6 +384,12 @@ h1 {
     width: 70%;
     border-radius: 7px;
     background-color: rgba(167, 17, 17, 0.671);
+}
+.add-album h2 {
+    color: white;
+    font-size: 4rem;
+    background-color: rgba(167, 17, 17, 0);
+    border: none;
 }
 
 .add-album:hover {
@@ -553,7 +564,7 @@ h1 {
     border-radius: 0.5rem;
     background-color: #b93737;
     position: fixed;
-    height: 70%;
+    height: 75%;
     width: 50%;
     top: 50%;
     left: 50%;
@@ -585,12 +596,12 @@ h1 {
 .modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="url"] {
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     background-color: whitesmoke;
     border: 1px solid #d1d5db;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #description {
