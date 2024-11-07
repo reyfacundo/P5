@@ -9,6 +9,7 @@ const express = require('express')
 const app = express()
 const path = require("path");
 const url = "mongodb+srv://plataforma5:gBDlFb8ukIUuYovz@curso-intro.sputp.mongodb.net/?retryWrites=true&w=majority&appName=Curso-intro"
+const port = process.env.PORT || 3000;
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,7 +19,7 @@ app.use('/band', albumsRouter);
 const connectToMongo = async () => {
     try {
         await mongoose.connect(url)
-        app.listen(3000, () => {
+        app.listen(port, () => {
             console.log('Server listening on port 3000')
         });
     } catch (error) {
