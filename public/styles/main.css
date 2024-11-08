@@ -21,7 +21,6 @@ body {
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    /* background-color: rebeccapurple; */
     height: 100vh;
     display: flex;
 }
@@ -368,13 +367,6 @@ h1 {
     color: #b93434;
 }
 
-/* .triangle-right {
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-left: 13px solid #646464;
-    border-bottom: 7px solid transparent;
-} */
 
 .add-album {
     cursor: pointer;

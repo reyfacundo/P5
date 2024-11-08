@@ -1,29 +1,33 @@
-// const router = require('./routes/index')
 const mongoose = require('mongoose');
-const UserSchema = require('./models/users')
-const AlbumSchema = require('./models/album')
-const usersRouter = require('./routes/users')
-const albumsRouter = require('./routes/albums')
-
-const express = require('express')
-const app = express()
 const path = require("path");
-const url = "mongodb+srv://plataforma5:gBDlFb8ukIUuYovz@curso-intro.sputp.mongodb.net/?retryWrites=true&w=majority&appName=Curso-intro"
-const port = 3000;
+const dotenv = require('dotenv');
+dotenv.config();
+const cookieParser = require('cookie-parser');
+const UserSchema = require('./models/users');
+const AlbumSchema = require('./models/album');
+const userRouter = require('./routes/users');
+const albumRouter = require('./routes/albums');
 
-app.use(express.json())
+const port = process.env.PORT;
+const uri = process.env.DATABASE_URL;
+
+const express = require('express');
+const app = express();
+
+
+app.use(cookieParser());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/users', usersRouter);
-app.use('/band', albumsRouter);
+app.use('/users', userRouter);
+app.use('/band', albumRouter);
 
-const connectToMongo = async () => {
+(async () => {
     try {
-        await mongoose.connect(url)
+        await mongoose.connect(uri)
         app.listen(port, () => {
-            console.log('Server listening on port 3000')
+            console.log('Server listening on port 3000');
         });
     } catch (error) {
-        console.error(error)
+        console.error(error);
     }
-}
-connectToMongo()
+})();

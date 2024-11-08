@@ -10,7 +10,6 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     height: 100vh;
-    /* background-color: rebeccapurple; */
 }
 img, picture, video, canvas, svg {
     display: block;
@@ -118,7 +117,7 @@ input[type=submit]:active{
 }
 .redir {
     font-size: 1.2rem;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .redir a {
@@ -141,6 +140,7 @@ input[type=submit]:active{
     }
     .login{
         width: 100%;
+        margin: 60px 0;
     }
 }
 @media (max-width: 350px) {
@@ -153,5 +153,14 @@ input[type=submit]:active{
     .form-group{
         width: 70%;
     }
+}
 
+.credentials{
+    color: #cf3937;
+    margin: 10px 0 25px 0;
+    font-weight: bold;
+    display: none;
+}
+.valid{
+    display: block;
 }

@@ -1,22 +1,22 @@
+import { redirect } from "./utils/redirect.js";
+
 const loginForm = document.querySelector('#loginForm');
-if (loginForm) loginForm.addEventListener('submit', loginValidate);
+if (loginForm) loginForm.addEventListener('submit', await loginValidate);
 
-function loginValidate(e) {
-    e.preventDefault()
+async function loginValidate(e) {
+    e.preventDefault();
     const email = document.querySelector('#email').value;
-    const pass = document.querySelector('#password').value;
-    if (email.length === 0 || pass.length === 0) {
-        Swal.fire({
-            icon: "error",
-            text: "You must complete all fields",
-            confirmButtonColor: "#9ce897",
-        })
-        return
+    const password = document.querySelector('#password').value;
+    try {
+            let user = {email,password};
+            await axios.post(`/users/login`, user);
+            redirect("/html/albums.html");
+            }
+    catch (error) {
+        document.querySelector('.credentials').classList.add('valid');
+        console.error(error);   
     }
-    if (pass.length <= 6)
-        window.location.href = "/"
 }
-
 const signUpForm = document.querySelector('#signUpForm');
 if (signUpForm) signUpForm.addEventListener('submit', await signupValidate);
 let passFlag = false;
@@ -44,16 +44,14 @@ async function signupValidate(e) {
             const name = document.querySelector('#name').value;
             const lastName = document.querySelector('#lastName').value;
             const email = document.querySelector('#email').value;
-            const pass = document.querySelector('.passwordSignUp').value;
+            const password = document.querySelector('.passwordSignUp').value;
             
-            let newUser = {name,lastName,email,password : pass};
+            let newUser = {name,lastName,email,password};
             
-            await axios.post(`/users`, newUser);
-
-            window.location.href = "login.html"
+            await axios.post(`/users/signup`, newUser);
+            redirect("/");
             return
         }
-        alert("NUH UHHH")
     }
     catch (error) {
         console.error(error)

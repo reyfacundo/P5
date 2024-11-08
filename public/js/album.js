@@ -1,8 +1,9 @@
-import { editAlbumForm } from "./validators.js";
-import { addSongForm } from "./validators.js";
 import { changeAlbum, icons, getAlbums, deleteAlbum, addAlbum, addSong, deleteSong } from "./albumRender.js";
 import { getAlbum } from "./albumRender.js";
 import { getAlbumDataset } from "./albumRender.js";
+import { logout } from "./utils/logout.js";
+import { redirect } from "./utils/redirect.js";
+
 
 document.querySelector('.albums-container').addEventListener('click', async (e) => {
     if (e.target.classList.contains('fa-star')) {
@@ -11,7 +12,6 @@ document.querySelector('.albums-container').addEventListener('click', async (e) 
     if (e.target.classList.contains('fa-pencil')) {
         const albumId = e.target.closest('li').dataset.id
         const album = await getAlbumDataset(albumId);
-        console.log(album.yearOfRelease)
         document.querySelector('.edit form #title').value = album.title;
         document.querySelector('.edit form #description').value = album.description;
         const dateOnly = album.yearOfRelease.split("T")[0];
@@ -21,9 +21,7 @@ document.querySelector('.albums-container').addEventListener('click', async (e) 
     }
     if (e.target.classList.contains('album-cover')) {
         const id = e.target.dataset.id
-        window.location.href = `./album.html?album=${id}`
-        // getAlbum()
-        // redirect(e.target.dataset._id);
+        redirect(`./album.html?album=${id}`);
     }
     if(e.target.classList.contains('fa-trash')){
         deleteAlbum()
@@ -76,5 +74,7 @@ document.querySelector('.album-container').addEventListener('click', e => {
         deleteSong(e)
     }
 })
+document.querySelector('.logout').addEventListener('click', logout);
+
 getAlbums().then(() => icons());
 getAlbum();

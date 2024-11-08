@@ -1,8 +1,9 @@
 const express = require('express');
 const albums = require('../models/album');
-const router = express.Router();
+const authToken = require('./middlewares/auth')
+const albumRouter = express.Router();
 
-router.post('/', async (req, res) => {
+albumRouter.post('/', authToken ,async (req, res) => {
     try {
         const newAlbum = await albums.create(req.body); 
         res.status(201).json(newAlbum); 
@@ -11,12 +12,11 @@ router.post('/', async (req, res) => {
         res.status(500).send('Error when creating the album');
     }
 });
-router.post('/:id', async (req, res) => {
+albumRouter.post('/:id',authToken, async (req, res) => {
     try {
         const { id } = req.params;
         const result = await albums.findById(id);
         if(!result) throw new Error
-        console.log(req.body)
         result.songs.push(req.body);
         await result.save();
         res.status(200).send(result);
@@ -25,17 +25,17 @@ router.post('/:id', async (req, res) => {
         res.status(404).send("No data available");
     }
 })
-router.get('/', async (req, res) => {
+albumRouter.get('/',authToken, async (req, res) => {
     try {
         const result = await albums.find({});
         if(!result) throw new Error
         res.status(200).send(result);
     } catch (error) {
         console.error(error)
-        res.status(404).send("No data available");
+        res.status(401).send("No data available");
     }
 });
-router.get('/:id', async (req, res) => {
+albumRouter.get('/:id',authToken, async (req, res) => {
     try {
         const { id } = req.params;
         const result = await albums.findById(id);
@@ -46,7 +46,7 @@ router.get('/:id', async (req, res) => {
         res.status(404).send("No data available");
     }
 });
-router.patch('/:id', async (req, res) => {
+albumRouter.patch('/:id',authToken, async (req, res) => {
     try {
         const { id } = req.params;
         const updates = req.body;
@@ -58,7 +58,7 @@ router.patch('/:id', async (req, res) => {
         res.status(500).send("Couldn't update the album");
     }
 });
-router.delete('/:albumId/:songId', async (req, res) => {
+albumRouter.delete('/:albumId/:songId',authToken, async (req, res) => {
     try {
         const { albumId, songId } = req.params;
         const album = await albums.findById(albumId);
@@ -73,7 +73,7 @@ router.delete('/:albumId/:songId', async (req, res) => {
         res.status(404).send("No data available");
     }
 });
-router.delete('/:id', async (req, res) => {
+albumRouter.delete('/:id',authToken, async (req, res) => {
     try {
         const { id } = req.params;
         const result = await albums.findByIdAndDelete(id);
@@ -85,4 +85,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = albumRouter;
