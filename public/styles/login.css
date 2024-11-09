@@ -83,9 +83,6 @@ p, h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-.form-group:nth-child(4) {
-    margin-bottom: 40px;
-}
 
 h3 {
     font-family: "Abril Fatface", serif;
@@ -136,11 +133,14 @@ input[type=submit]:active{
     }
     .bg{
         position: static;
-        height: 80%;
+        height: 40%;
     }
     .login{
         width: 100%;
         margin: 60px 0;
+    }
+    h3{
+        font-size: 2rem;
     }
 }
 @media (max-width: 350px) {

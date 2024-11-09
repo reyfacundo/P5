@@ -89,15 +89,15 @@ h6 {
     flex-direction: column;
     width: 60%;
     transition: 0.7s;
-
 }
 
 .form-group input {
     border-radius: 3px;
     border: 1.9px solid;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 7px;
+    margin-bottom: 10px;
     transition: 0.1s;
+    text-align: center;
 }
 
 .form-group input:focus {
@@ -108,7 +108,7 @@ h6 {
 }
 
 .form-group:nth-child(4) {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 h3 {
@@ -158,7 +158,7 @@ input[type=submit]:active{
     }
     .bg{
         position: relative;
-        height: 80%;
+        height: 30%;
     }
     .signUp{
         width: 100%;
@@ -169,13 +169,8 @@ input[type=submit]:active{
         position: absolute;
     }
     h3{
-        margin-top: 20px;
-    }
-    .form-group:nth-child(4){
-        margin-bottom: 20px;
-    }
-    .redir{
-        margin-top: 0px;
+        margin-top: 10px;
+        font-size: 2rem;
     }
 }
 @media (max-width: 350px) {
